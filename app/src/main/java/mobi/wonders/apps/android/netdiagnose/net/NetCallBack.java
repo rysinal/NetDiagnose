@@ -1,4 +1,4 @@
-package mobi.wonders.apps.android.netdiagnose;
+package mobi.wonders.apps.android.netdiagnose.net;
 
 /**
  * <p>

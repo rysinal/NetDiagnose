@@ -1,4 +1,4 @@
-package mobi.wonders.apps.android.netdiagnose;
+package mobi.wonders.apps.android.netdiagnose.net;
 
 import android.app.AlertDialog;
 import android.content.ComponentName;
@@ -9,13 +9,12 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import mobi.wonders.apps.android.netdiagnose.R;
 
 /**
  * <p>
@@ -62,16 +61,17 @@ public class NetUtils {
                             netCode = uConnection.getResponseCode();
                             System.out.println("responseCode:" + netCode);
                             connect = true;
-                            InputStream is = uConnection.getInputStream();
-                            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-                            StringBuilder sb = new StringBuilder();
-                            while (br.read() != -1) {
-                                sb.append(br.readLine());
-                            }
-                            String content = new String(sb);
-                            content = new String(content.getBytes("GBK"), "ISO-8859-1");
-                            System.out.println("response:" + content);
-                            br.close();
+                            // 测试输出结果
+//                            InputStream is = uConnection.getInputStream();
+//                            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+//                            StringBuilder sb = new StringBuilder();
+//                            while (br.read() != -1) {
+//                                sb.append(br.readLine());
+//                            }
+//                            String content = new String(sb);
+//                            content = new String(content.getBytes("GBK"), "ISO-8859-1");
+//                            System.out.println("response:" + content);
+//                            br.close();
                         } catch (Exception e) {
                             connect = false;
                             e.printStackTrace();
